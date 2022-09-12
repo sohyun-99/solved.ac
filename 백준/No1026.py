@@ -24,4 +24,4 @@ print(result)
 
 #얻은점
 #입력 받을때 자료형대로 입력받기
-#max,min,index 함수
+#max,min,index 함수 사용법
