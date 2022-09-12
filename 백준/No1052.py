@@ -9,41 +9,43 @@
 
 N,K=map(int,input().split()) #총 n개의 물병을 한번에 K개 옮길 수 있음
 
+
 #비어있지 않은 총 물병의갯수
 num=N
-_sum=0
 A=0
 rest=[]
-_rest=0
+#_rest=0
+answer=0
+i=0
 
-# num<K 로 만들어야함
-num=num//2
-num_rest=num%2
-#나머지가 있으면 num개 만큼의 같은 리터에대가 따로노는 애 1명
+ #현재 담겨있는 물병의 갯수
+_sum=N
 
-def countSum(num,A) :
-    if num > 1:
-        num=num//2
-        if num%2==1:
+#그 갯수가 K보다 같거나 작아질때까지 while문 돌림
+while _sum > K: 
+    if num>1 :
+        if num%2==1:#남는 물병이 존재한다는 뜻
             rest.append(2**A)
-        _sum+=num+num%2   
+        num=num//2
+        _sum=num+len(rest)
         A+=1
     else:
-        A+=2
+        if(i<len(rest)-1):
+            answer+=rest[i+1]-rest[i]
+            rest[i+1]*=2
+            _sum-=1
+            i+=1
+        else:
+            if len(rest)==1:
+                answer=2**A-rest[0]
+                _sum-=1
+            else:
+                if _sum==2:
+                    answer+=2**A-rest.pop()
+                break
 
-countSum(num,A)
-while _sum > K:
-    countSum(num,A)
-print(_sum)
-print(rest)
-print(A)
-##while _sum > K:
-##    for i in range(len(rest)):
-##        if rest[i] != rest[i+1]:
-##            rest+=rest[i+1]-rest[i]
-##        else:
-##            rest[i]=2*rest[i]
-##            rest.pop(rest[i])
+print(answer) #구매해야하는 물병의 수
+
         
 
         
