@@ -44,7 +44,8 @@ while _sum > K:
                     answer+=2**A-rest.pop()
                 break
 
-print(answer) #구매해야하는 물병의 수
+print(answer)
+#구매해야하는 물병의 수
 
         
 
