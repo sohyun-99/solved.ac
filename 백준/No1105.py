@@ -1,20 +1,14 @@
 L,R=map(int,input().split())
-Min=R
-if L==R:
-    count=0
-    l=list(str(L))  
-    for i in range(len(l)):
-        if l[i]=="8":
-            count+=1
+Min=0
+l=str(L)
+r=str(R)
+if len(str(L))!=len(str(R)):
+    Min=0
 else :
-    for k in range(L,R):
-        count=0
-        l=list(str(k))
-        for i in range(len(l)):
-            if l[i]=="8":
-                count+=1
-        if count<Min:
-            Min=count
-        if count==0:
+    for i in range(len(str(R))):
+        if l[i]==r[i]:
+            if l[i]=='8':
+                Min+=1
+        else:
             break
 print(Min)
