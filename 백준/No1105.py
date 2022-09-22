@@ -13,3 +13,4 @@ else :
         else:
             break
 print(Min)
+##성
