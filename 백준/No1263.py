@@ -17,4 +17,4 @@ for i in range(1,N):
         break
                      
 print(first)
-##blank처리를 잘 해주지 못해 올바른 답 도출 실패
+#맨뒤부터 채우
