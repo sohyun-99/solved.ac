@@ -2,6 +2,7 @@ L,R=map(int,input().split())
 Min=0
 l=str(L)
 r=str(R)
+
 if len(str(L))!=len(str(R)):
     Min=0
 else :
