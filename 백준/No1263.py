@@ -17,4 +17,4 @@ for i in range(1,N):
         break
                      
 print(first)
-#맨뒤부터 채우
+#맨뒤부터 채우기로 알고리즘 구현 성
